@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dollar Shave Club</title>
+    <style media="screen">
+        body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: baskerville;
+            background: url(http://www.nishant-kaushish.com/wp-content/uploads/2017/04/dsc-bg.png) repeat blanchedalmond;
+        }
+
+        .main-div {
+            position: relative;
+            width: 80%;
+            height: 800px;
+            text-align: center;
+            margin: 1% auto;
+            box-shadow: 10px 30px 50px 10px gray;
+            background: #fffaf0;
+            /*#FFD3AC, #F5E9F8, #fffaf0*/
+        }
+
+        header {
+            width: 100%;
+            height: 120px;
+            border-bottom: 2px solid #323232;
+            position: relative;
+        }
+
+        .menu {
+            position: absolute;
+            width: 4%;
+            left: 12%;
+            top: 20%;
+        }
+
+        svg {
+            cursor: pointer;
+            padding: 3% 7%;
+            border: 2px solid transparent;
+        }
+
+        .menu ul {
+            max-height: 0;
+            overflow: hidden;
+            width: 9em;
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            background: #323232;
+            transition: max-height 0.7s;
+        }
+
+        .menu ul li {
+            font-size: 1em;
+            padding: 8%;
+            letter-spacing: 1px;
+            color: white;
+            border-bottom: 1px solid #323232;
+        }
+
+        .menu:hover svg {
+            border: 2px solid #323232;
+        }
+
+        .menu:hover ul {
+            max-height: 14em;
+        }
+
+        .menu ul li:hover {
+            cursor: pointer;
+            border-bottom: 1px solid white;
+        }
+
+        .logo {
+            color: #323232;
+            margin-left: 29%;
+            margin-top: 1%;
+            float: left;
+        }
+
+        .logo h1 {
+            margin: 0;
+            padding: 0;
+            font-family: Georgia;
+            font-size: 3em;
+            letter-spacing: 1px;
+            font-variant: small-caps;
+        }
+
+        .logo-image {
+            width: 20%;
+            margin: auto;
+        }
+
+        .logo-image img {
+            width: 100%;
+        }
+
+        .login-signup {
+            width: 20%;
+            float: right;
+            margin-right: 2%;
+        }
+
+        .login-signup button {
+            margin: 10% 0.5% 0 0.5%;
+            padding: 2% 7%;
+            border: 1px solid #323232;
+            color: white;
+            background: #323232;
+            box-shadow: 0.5px 0.5px 2px 0px black;
+            letter-spacing: 1px;
+            font-size: 0.7em;
+        }
+
+        .login-signup button:focus {
+            outline: none;
+        }
+
+        .login-signup button:active {
+            box-shadow: none;
+        }
+
+        .login-signup button:hover {
+            cursor: pointer;
+        }
+
+        .left-section {
+            width: 30%;
+            height: 40%;
+            float: left;
+            text-align: center;
+            margin: 5% 0% 0% 7%;
+        }
+
+        .left-section p {
+            letter-spacing: 3px;
+            font-family: helvetica;
+            color: #323232;
+            line-height: 1.5;
+            font-size: 2.2em;
+            font-weight: bold;
+        }
+
+        .cta {
+            width: 100%;
+            height: 40%;
+            margin: 0 auto;
+            margin-top: 1%;
+        }
+
+        .cta button {
+            width: 100%;
+            height: 55%;
+            font-size: 2em;
+            background: royalblue;
+            color: white;
+            border: 1px solid royalblue;
+            box-shadow: 1px 1px 5px 1px #323232;
+            letter-spacing: 2px;
+            text-transform: capitalize;
+        }
+
+        .cta button:focus {
+            outline: none;
+        }
+
+        .cta button:active {
+            box-shadow: none;
+        }
+
+        .cta button:hover {
+            background: blue;
+            cursor: pointer;
+        }
+
+        iframe {
+            margin-top: 5%;
+            border: 15px solid #323232;
+            border-radius: 20px;
+            float: right;
+            margin-right: 3%;
+            cursor: pointer;
+            float: right;
+            width: 50%;
+            height: 40%;
+        }
+
+        .free-blades {
+            clear: both;
+            width: 80%;
+            height: 350px;
+            margin: 0 auto;
+            background: orangered;
+            color: white;
+            box-shadow: 5px 25px 40px 20px gray;
+            margin-top: 50%;
+        }
+
+        .free-blades h1 {
+            padding-top: 4%;
+            letter-spacing: 2px;
+            font-size: 2.5em;
+        }
+
+        .free-blades p {
+            width: 70%;
+            font-size: 1.2em;
+            margin: 0 auto;
+            letter-spacing: 2px;
+            line-height: 1.5;
+            font-family: open-sans;
+        }
+
+        .free-blades button {
+            width: 30%;
+            margin-top: 2%;
+            padding: 1.5% 4%;
+            color: white;
+            background: #323232;
+            border: 1px solid #323232;
+            font-size: 1.5em;
+            box-shadow: 1px 1px 5px 1px black;
+            cursor: pointer;
+            font-family: open-sans;
+            letter-spacing: 2px;
+        }
+
+        .free-blades button:focus {
+            outline: none;
+        }
+
+        .free-blades button:active {
+            box-shadow: none;
+        }
+
+        .free-blades button:hover {
+            cursor: pointer;
+        }
+
+        p.secondp {
+            font-size: 0.9em;
+            padding-top: 1%;
+        }
+
+        .our-blades {
+            position: relative;
+            width: 80%;
+            height: 450px;
+            margin: 15% auto 0 auto;
+            background: #161F4D;
+            z-index: 1;
+            box-shadow: 5px 10px 40px 5px gray;
+            color: white;
+        }
+        /*#FFD3AC, #F5E9F8, DCF8C0*/
+
+        .left-image {
+            float: left;
+            width: 43%;
+            margin-left: 2%;
+        }
+
+        .left-image img {
+            width: 100%;
+            margin-top: 10%;
+            border: 2px solid #FF9F00;
+        }
+
+        .our-blades-content {
+            width: 55%;
+            float: right;
+            text-align: center;
+        }
+
+        .our-blades-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 0;
+        }
+
+        .our-blades-content h4 {
+            margin-top: 1%;
+        }
+
+        .our-blades-content p {
+            font-size: 1em;
+            line-height: 1.5;
+            letter-spacing: 1px;
+        }
+
+        .pricing {
+            width: 40%;
+            height: 60px;
+            margin: 0 auto;
+            font-size: 1.5em;
+            letter-spacing: 2px;
+            box-shadow: 1px 1px 5px 1px #323232;
+            cursor: pointer;
+            margin-top: 2%;
+            color: white;
+            font-family: open-sans;
+            background: #FF9F00;
+            border: 1px solid #ff9f00;
+        }
+
+        .pricing:focus {
+            outline: none;
+        }
+
+        .pricing:active {
+            box-shadow: none;
+        }
+
+        .pricing:hover {
+            cursor: pointer;
+        }
+
+        .shaving-people {
+            position: relative;
+            width: 100%;
+            background: royalblue;
+            height: 125px;
+            text-align: center;
+            margin: 0;
+            margin-top: -1%;
+            padding: 0;
+            box-shadow: 5px 20px 40px 5px gray;
+            z-index: 3;
+        }
+
+        .shaving-people p {
+            font-family: baskerville;
+            font-size: 1.3em;
+            letter-spacing: 3px;
+            margin: 0;
+            padding: 3%;
+            color: white;
+        }
+
+        footer {
+            position: relative;
+            width: 90%;
+            background-color: #323232;
+            color: white;
+            height: 125px;
+            margin: 0 auto;
+            margin-top: -1%;
+            z-index: 3;
+        }
+
+        .social-media {
+            float: left;
+            width: 40%;
+            margin-top: 1%;
+            margin-left: 1%;
+        }
+
+        .social-media img {
+            width: 80%;
+            cursor: pointer;
+        }
+
+        footer ul {
+            float: right;
+            color: white;
+            width: 40%;
+            height: 50%;
+            list-style: none;
+            padding-left: 0;
+            text-align: center;
+            margin-top: 1.5%;
+        }
+
+        footer ul li {
+            padding: 3%;
+            font-family: helvetica;
+            letter-spacing: 2px;
+            font-size: 1em;
+            float: left;
+        }
+
+        footer ul li:hover {
+            cursor: pointer;
+        }
+
+        footer p {
+            font-size: 0.7em;
+            clear: both;
+            text-align: center;
+            letter-spacing: 2px;
+            font-family: helvetica;
+        }
+
+        @media (max-width: 1280px) {
+            .main-div {
+                height: 800px;
+            }
+            .menu {
+                left: 5%;
+            }
+            .logo {
+                margin-left: 20%;
+            }
+            .logo h1 {
+                font-size: 2em;
+            }
+            .logo-image {
+                width: 16%;
+            }
+            .free-blades {
+                height: 450px;
+            }
+            .our-blades {
+                margin-top: 10%;
+            }
+            footer .social-media {
+                width: 30%;
+            }
+            footer ul {
+                width: 60%;
+                margin: 0;
+            }
+            footer p {
+                padding-top: 3%;
+            }
+        }
+
+        @media (max-width: 1080px) {
+            .main-div {
+                height: 600px;
+            }
+            header {
+                border-bottom: 0;
+            }
+            .logo {
+                width: 60%;
+            }
+            .logo h1 {
+                font-size: 2em;
+            }
+            .login-signup {
+                float: none;
+                width: 100%;
+            }
+            .login-signup button {
+                width: 48.5%;
+                font-size: 1em;
+                margin-top: 0;
+                padding: 1%;
+            }
+            .left-section {
+                margin-top: 10%;
+            }
+            .left-section p {
+                font-size: 1.3em;
+            }
+            .cta {
+                width: 60%;
+                height: 30%;
+            }
+            .cta button {
+                font-size: 1em;
+            }
+            iframe {
+                width: 50%;
+                height: 30%;
+                margin-top: 10%;
+                margin-bottom: 10%;
+            }
+            .free-blades {
+                width: 75%;
+                height: 400px;
+                margin-top: 50%;
+            }
+            .free-blades h1 {
+                font-size: 1.5em;
+            }
+            .free-blades p {
+                font-size: 0.7em;
+            }
+            .free-blades button {
+                font-size: 1em;
+            }
+            .our-blades {
+                margin-top: 15%;
+                height: 700px;
+            }
+            .left-image {
+                float: none;
+                margin: 0 auto;
+                width: 50%;
+            }
+            .our-blades-content {
+                float: none;
+                margin: 0 auto;
+            }
+            .our-blades-content h1 {
+                font-size: 2em;
+            }
+            .our-blades-content button {
+                width: 40%;
+                height: 50%;
+                font-size: 1em;
+            }
+            .shaving-people p {
+                font-size: 1em;
+                line-height: 2;
+            }
+            .social-media {
+                float: none;
+                margin: 0 auto;
+                width: 50%;
+            }
+            footer ul {
+                float: none;
+                font-size: 0.8em;
+                width: 100%;
+                height: 50%;
+                padding: 0;
+                margin: 0;
+                margin-top: 1%;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-justify-content: space-around;
+                justify-content: space-around;
+            }
+            footer ul li {
+                padding: 0;
+                margin: 0;
+            }
+            footer p {
+                padding-top: 0;
+                margin-top: 0%;
+                font-size: 0.5em;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                background: #fffaf0;
+            }
+            .main-div {
+                height: 450px;
+                width: 100%;
+            }
+            header {
+                height: 100px;
+                border: none;
+            }
+            .menu {
+                width: 8%;
+                left: 4%;
+                top: 1%;
+            }
+            svg {
+                cursor: pointer;
+                border: 2px solid transparent;
+                padding: 0.5%;
+            }
+            .menu ul {
+                max-height: 0;
+                width: 10em;
+                transition: max-height 0.7s;
+            }
+            .menu ul li {
+                font-size: 1em;
+            }
+            .logo {
+                margin: 0 auto;
+                float: none;
+            }
+            .logo h1 {
+                font-family: Georgia;
+                font-size: 1.8em;
+            }
+            .logo-image {
+                width: 20%;
+                margin: 0 auto;
+            }
+            .logo-image img {
+                width: 100%;
+            }
+            .login-signup {
+                float: none;
+                width: 100%;
+            }
+            .login-signup button {
+                margin-top: 0;
+                width: 48.5%;
+            }
+            .left-section {
+                width: 40%;
+                height: 20%;
+                margin-top: 15%;
+                margin-left: 2%;
+                float: left;
+            }
+            .left-section p {
+                letter-spacing: 1px;
+                font-family: helvetica;
+                color: #323232;
+                font-size: 1em;
+                font-weight: bold;
+            }
+            .cta {
+                width: 100%;
+                height: 35%;
+                margin: 0 auto;
+            }
+            .cta button {
+                width: 60%;
+                height: 100%;
+                font-size: 1em;
+                letter-spacing: 2px;
+            }
+            iframe {
+                margin: 5% auto 0 auto;
+                margin-top: 15%;
+                border: none;
+                border-radius: 0;
+                cursor: pointer;
+                width: 50%;
+                height: 8em;
+                float: none;
+            }
+            .free-blades {
+                width: 80%;
+                margin-top: 10%;
+                height: 250px;
+            }
+            .free-blades h1 {
+                font-size: 1.5em;
+            }
+            .free-blades p {
+                font-size: 0.7em;
+            }
+            .free-blades button {
+                width: 40%;
+                height: 3em;
+                font-size: 0.7em;
+                margin-top: 4%;
+            }
+            .our-blades {
+                height: 550px;
+                margin-top: 30%;
+                width: 100%;
+            }
+            .left-image {
+                width: 60%;
+                float: none;
+                margin: 0 auto;
+            }
+            .our-blades-content {
+                float: none;
+                width: 80%;
+                margin: 0 auto;
+                line-height: normal;
+            }
+            .our-blades-content h1 {
+                font-size: 1.2em;
+            }
+            .our-blades-content p {
+                font-size: 0.7em;
+            }
+            .our-blades-content button {
+                width: 50%;
+                height: 2em;
+                font-size: 0.9em;
+            }
+            .shaving-people {
+                width: 100%;
+                height: 100px;
+                margin-top: 0;
+            }
+            .shaving-people p {
+                font-size: 0.8em;
+                line-height: 2;
+            }
+            footer {
+                height: 150px;
+                width: 100%;
+            }
+            footer .social-media {
+                width: 50%;
+                float: none;
+                margin: 0 auto;
+            }
+            footer .social-media img {
+                width: 100%;
+            }
+            footer ul {
+                float: none;
+                display: block;
+                font-size: 0.7em;
+                width: 100%;
+                height: 10%;
+                margin: 0;
+                padding: 0;
+                margin-top: 3%;
+                -webkit-display: flex;
+                display: flex;
+                -webkit-justify-content: space-around;
+                justify-content: space-around;
+            }
+            footer ul li {
+                margin: 0;
+                padding: 0;
+            }
+            footer p {
+                width: 80%;
+                font-size: 0.2em;
+                margin: 3% auto 0 auto;
+                padding: 0;
+            }
+        }
+
+        @media (max-width: 450px) {
+            body {
+                background: #fffaf0;
+            }
+            header {
+                height: 100px;
+                border: none;
+            }
+            .main-div {
+                height: 450px;
+                width: 100%;
+            }
+            .menu {
+                position: absolute;
+                width: 10%;
+                left: 2%;
+                top: 1%;
+            }
+            svg {
+                cursor: pointer;
+                border: 2px solid transparent;
+            }
+            .menu ul {
+                max-height: 0;
+                width: 10em;
+                transition: max-height 0.7s;
+            }
+            .menu ul li {
+                font-size: 1em;
+            }
+            .logo {
+                float: none;
+                margin: 0 auto;
+            }
+            .logo h1 {
+                font-family: Georgia;
+                font-size: 1.2em;
+            }
+            .logo-image {
+                width: 20%;
+                margin: 0 auto;
+            }
+            .logo-image img {
+                width: 100%;
+            }
+            .login-signup {
+                clear: both;
+                width: 100%;
+                padding: 0;
+                float: none;
+            }
+            .login-signup button {
+                margin-top: 0;
+                width: 49%;
+                float: left;
+                padding: 2% 5%;
+                color: white;
+                font-size: 0.7em;
+            }
+            .left-section {
+                width: 100%;
+                height: 20%;
+                margin-top: 1%;
+                margin-left: 0%;
+            }
+            .left-section p {
+                letter-spacing: 1px;
+                font-family: helvetica;
+                color: #323232;
+                font-size: 1em;
+                font-weight: bold;
+            }
+            .cta {
+                width: 100%;
+                height: 35%;
+                margin: 0 auto;
+            }
+            .cta button {
+                width: 60%;
+                height: 100%;
+                font-size: 1em;
+                letter-spacing: 2px;
+            }
+            iframe {
+                margin: 1% auto 0 auto;
+                margin-top: 10%;
+                border: none;
+                border-radius: 0;
+                cursor: pointer;
+                width: 98%;
+                height: 8em;
+                float: none;
+            }
+            .free-blades {
+                width: 100%;
+                margin-top: 5%;
+                height: 250px;
+            }
+            .free-blades h1 {
+                font-size: 1em;
+            }
+            .free-blades p {
+                font-size: 0.4em;
+            }
+            .free-blades button {
+                width: 40%;
+                height: 2em;
+                font-size: 0.7em;
+                margin-top: 4%;
+            }
+            .our-blades {
+                height: 450px;
+                margin-top: 30%;
+                width: 100%;
+            }
+            .left-image {
+                width: 60%;
+                float: none;
+                margin: 1% auto;
+            }
+            .our-blades-content {
+                float: none;
+                width: 80%;
+                margin: 0 auto;
+                line-height: normal;
+            }
+            .our-blades-content h1 {
+                font-size: 1.2em;
+            }
+            .our-blades-content p {
+                font-size: 0.7em;
+            }
+            .our-blades-content button {
+                width: 50%;
+                height: 2em;
+                font-size: 0.9em;
+            }
+            .shaving-people {
+                width: 100%;
+                height: 80px;
+            }
+            .shaving-people p {
+                font-size: 0.5em;
+                line-height: 2;
+            }
+            footer {
+                height: 100px;
+                width: 100%;
+            }
+            footer .social-media {
+                width: 50%;
+                float: none;
+                margin: 0 auto;
+            }
+            footer .social-media img {
+                width: 100%;
+            }
+            footer ul {
+                float: none;
+                display: block;
+                font-size: 0.7em;
+                width: 100%;
+                height: 30%;
+                margin: 0;
+                margin-top: 2%;
+                -webkit-display: flex;
+                display: flex;
+                justify-content: space-around;
+                -webkit-justify-content: space-around;
+            }
+            footer p {
+                width: 100%;
+                font-size: 0.05em;
+                padding: 0;
+                margin: 0;
+            }
+        }
+        /*# sourceMappingURL=dsc.css.map */
+    </style>
+</head>
+
+<body>
+
+    <div class="main-div">
+
+        <header>
+            <div class="menu">
+                <svg fill="#323232" height="100%" viewBox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 0h24v24H0z" fill="none"/>
+                      <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                  </svg>
+                <ul>
+                    <li>Get Started</li>
+                    <li>Blades</li>
+                    <li>Pricing</li>
+                    <li>Blog</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+
+            <div class="logo">
+                <h1>Dollar Shave Club</h1>
+                <div class="logo-image"><img src="http://www.nishant-kaushish.com/wp-content/uploads/2017/04/dsc-logo.png" alt="dollar shave club"></div>
+            </div>
+
+            <div class="login-signup">
+                <button type="button">Login </button>
+                <button type="button">Signup</button>
+            </div>
+        </header>
+
+
+        <div class="left-section">
+            <p>A Great Shave For A Few Bucks A Month</p>
+            <div class="cta"><button type="button">Do It</button></div>
+        </div>
+        <iframe src="https://www.youtube-nocookie.com/embed/ZUG9qYTJMsI?rel=0&showinfo=0&autohide=1" frameborder="0" allowfullscreen></iframe>
+
+
+
+        <div class="free-blades">
+            <h1>Free Blades For Life</h1>
+            <p>Earn a free month for every friend you sign up. 1000 friends get you 83 years of free razors.</p>
+            <p class="secondp">And after that, we will be happy to keep sending!</p>
+            <button type="button">Lets Go</button>
+        </div>
+    </div>
+
+
+    <div class="our-blades">
+        <div class="left-image">
+            <img src="http://www.nishant-kaushish.com/wp-content/uploads/2017/04/dsc-razor.jpg" alt="our-blades">
+        </div>
+        <div class="our-blades-content">
+            <h1>Our Blades</h1>
+            <p>2-6 Stainless-steel blades</p>
+            <p>Aloe Vera strip moisturises the skin</p>
+            <p>Wide-Rubber Guard Bar with wave fins bring the hair up to shave deep</p>
+            <p>Full 90-degree pivot head with our premium blades</p>
+            <p>Wide, open-back for fast, easy rinse</p>
+            <button type="button" class="pricing">Pricing</button>
+        </div>
+    </div>
+
+
+    <div class="shaving-people">
+        <p>Shaving People At ABCNews | MSNBC | THE AUSTRALIAN | FORBES | SMH | LA Times | NY Times</p>
+    </div>
+
+
+    <footer>
+        <div class="social-media">
+            <img src="http://www.nishant-kaushish.com/wp-content/uploads/2017/04/social-media-icons.png" alt="social media icons">
+        </div>
+        <ul>
+            <li>About Us</li>
+            <li>Careers</li>
+            <li>Privacy</li>
+            <li>Terms</li>
+            <li>Press</li>
+        </ul>
+        <p> &copy 2012 Dollar Shave Club All Rights Reserved</p>
+    </footer>
+
+</body>
+
+</html>
